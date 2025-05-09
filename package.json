@@ -1,0 +1,42 @@
+{
+  "name": "mcp-wait-server",
+  "version": "1.0.0",
+  "description": "MCP server that provides a wait tool",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "mcp-wait-server": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amico1285/mcp-wait-server.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "wait",
+    "timer"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amico1285/mcp-wait-server/issues"
+  },
+  "homepage": "https://github.com/Amico1285/mcp-wait-server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.15",
+    "typescript": "^5.8.3"
+  },
+  "files": [
+    "build"
+  ]
+}
