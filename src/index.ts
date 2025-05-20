@@ -126,6 +126,26 @@ server.tool(
     }
 );
 
+// --- Define the 'get_datetime' tool ---
+// Define the result type for the get_datetime tool
+type GetDateTimeToolResult = {
+    content: { type: "text"; text: string }[];
+};
+
+// Register the 'get_datetime' tool
+server.tool(
+    "get_datetime",
+    "Returns the current date and time in ISO format.",
+    z.object({}).shape, // No input parameters
+    async (): Promise<GetDateTimeToolResult> => {
+        const currentDatetime = new Date().toISOString();
+        log('info', `Tool 'get_datetime' called. Returning: ${currentDatetime}`);
+        return {
+            content: [{ type: "text", text: currentDatetime }]
+        };
+    }
+);
+
 // --- Start the Server ---
 async function main() {
     log('info', "Initializing StdioServerTransport...");
