@@ -1,7 +1,7 @@
 {
   "name": "mcp-wait-server",
-  "version": "1.0.0",
-  "description": "MCP server that provides a wait tool",
+  "version": "1.1.0",
+  "description": "MCP server that provides wait and get_datetime tools",
   "type": "module",
   "main": "build/index.js",
   "bin": {
