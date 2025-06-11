@@ -1,6 +1,8 @@
 # MCP Wait Server
 
-Simple Model Context Protocol server providing a `wait` tool for Claude Desktop and other MCP clients. This tool allows Claude to pause execution for a specified number of seconds, which is useful when you need to wait for long-running operations to complete.
+Simple Model Context Protocol server providing time-related tools for Claude Desktop and other MCP clients:
+- `wait` - Pauses execution for a specified number of seconds, useful when you need to wait for long-running operations to complete
+- `get_datetime` - Returns the current date and time in ISO 8601 format
 
 ## Implementation
 
@@ -106,7 +108,7 @@ If you installed from source:
 
 4. Restart Claude Desktop
 
-5. The `wait` tool will now be available to Claude Desktop
+5. The `wait` and `get_datetime` tools will now be available to Claude Desktop
 
 ## Environment Variables
 
@@ -115,6 +117,7 @@ If you installed from source:
 
 ## How It Works
 
+### Wait Tool
 When Claude is given the `wait` tool, it can use it to wait for a specified number of seconds. This is particularly useful in scenarios like:
 
 - Waiting for a long-running script to complete
@@ -123,6 +126,14 @@ When Claude is given the `wait` tool, it can use it to wait for a specified numb
 - Allowing time for downloads or uploads to complete
 
 The tool has a maximum single wait duration (default 210 seconds), but will automatically handle longer waits by instructing Claude to call it again with the remaining time.
+
+### Get DateTime Tool
+The `get_datetime` tool provides the current date and time in ISO 8601 format. This is useful for:
+
+- Timestamping operations or events
+- Calculating time differences
+- Scheduling or time-based decision making
+- Logging with accurate timestamps
 
 ## Development
 

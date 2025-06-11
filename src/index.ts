@@ -135,7 +135,7 @@ type GetDateTimeToolResult = {
 // Register the 'get_datetime' tool
 server.tool(
     "get_datetime",
-    "Returns the current date and time in ISO format.",
+    "Returns the current date and time in ISO 8601 format (e.g., 2025-06-11T17:12:50.455Z).",
     z.object({}).shape, // No input parameters
     async (): Promise<GetDateTimeToolResult> => {
         const currentDatetime = new Date().toISOString();
